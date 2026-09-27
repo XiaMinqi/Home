@@ -124,10 +124,21 @@ export default function Home() {
       </div>
 
       <aside className="portrait-column" aria-label="Personal journey illustration">
-        <img
-          src="/journey.webp"
-          alt="A painted landscape tracing a journey from Jiangnan through Nanjing to Beijing, with subtle references to science, books, film, and badminton."
-        />
+        <div className="portrait-canvas">
+          <img
+            className="portrait-motion"
+            src="/journey-v2.webp"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+          />
+          <img
+            className="portrait-still"
+            src="/journey-v2.webp"
+            alt="A bright painted landscape flowing from a Jiangnan canal through Nanjing's green city wall toward an open Beijing skyline."
+            draggable="false"
+          />
+        </div>
       </aside>
     </main>
   );
