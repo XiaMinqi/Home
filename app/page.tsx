@@ -2,109 +2,133 @@
 
 import { useState } from "react";
 
-const interests = [
-  ["AI for science", "Intelligence"],
-  ["Scientific software", "Tools"],
-  ["Molecular modelling", "Research"],
-  ["Measurement and experiments", "Practice"],
+const notes = [
+  "AI for science",
+  "Scientific software",
+  "Measurement",
+  "Molecular modelling",
+  "Autonomous experimentation",
+  "Learning across fields",
+  "Books and ideas",
+  "Film and ways of seeing",
+];
+
+const now = [
+  ["Connecting experiments, models, and decisions", "Scientific work"],
+  ["Learning more about statistics, biology, and automation", "Current study"],
+  ["Reading across technology, business, history, and culture", "Ongoing"],
+  ["Playing badminton and learning to watch films more carefully", "Outside work"],
+];
+
+const background = [
+  ["Scientific research, modelling, data, and AI", "Beijing"],
+  ["Chemistry and computational chemistry", "Nanjing University"],
+  ["Where I grew up", "Wuxi, Jiangsu"],
 ];
 
 export default function Home() {
   const [longBio, setLongBio] = useState(false);
 
   return (
-    <main className="page">
-      <header className="topbar">
-        <a className="handle" href="#bio" aria-label="Minqi Xia, home">
-          @XiaMinqi
-        </a>
-        <a
-          className="github-link"
-          href="https://github.com/XiaMinqi"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
-      </header>
+    <main className="site-shell">
+      <div className="content-column">
+        <header>
+          <a className="handle" href="#bio" aria-label="Minqi Xia, home">
+            @XiaMinqi
+          </a>
+        </header>
 
-      <section className="bio-section" id="bio" aria-labelledby="bio-title">
-        <div className="section-topline">
-          <h1 id="bio-title">Bio</h1>
-          <div className="bio-switch" aria-label="Biography length">
-            <button
-              type="button"
-              className={!longBio ? "active" : ""}
-              aria-pressed={!longBio}
-              onClick={() => setLongBio(false)}
-            >
-              Default
-            </button>
-            <button
-              type="button"
-              className={longBio ? "active" : ""}
-              aria-pressed={longBio}
-              onClick={() => setLongBio(true)}
-            >
-              Long
-            </button>
+        <section className="bio" id="bio" aria-labelledby="bio-label">
+          <div className="bio-toolbar">
+            <span id="bio-label">Bio</span>
+            <div className="bio-modes" aria-label="Biography length">
+              <button
+                type="button"
+                className={!longBio ? "active" : ""}
+                aria-pressed={!longBio}
+                onClick={() => setLongBio(false)}
+              >
+                Default
+              </button>
+              <button
+                type="button"
+                className={longBio ? "active" : ""}
+                aria-pressed={longBio}
+                onClick={() => setLongBio(true)}
+              >
+                Long
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div className="bio-copy">
-          <p>
-            I’m a scientist and builder working where physical science,
-            computation, and AI meet. I studied chemistry and computational
-            chemistry at Nanjing University, and I’m now based in Beijing.
-          </p>
-          {longBio && (
+          <div className="bio-copy">
             <p>
-              I care about making complex scientific ideas easier to test,
-              explain, and use. Most days, that means moving between models,
-              experiments, data, and software. Away from work, I play badminton,
-              read, watch films, and stay curious about subjects far outside my
-              own field.
+              I’m a scientist and builder working where physical science,
+              computation, and AI meet. I build models and tools that help people
+              understand complex systems and make better scientific decisions.
             </p>
-          )}
-        </div>
-      </section>
+            <p>
+              My background is in chemistry and computational modelling. Over
+              time, my interests have expanded from molecules to measurement,
+              software, and the design of scientific workflows.
+            </p>
+            {longBio && (
+              <p>
+                I grew up in Wuxi, studied at Nanjing University, and now live in
+                Beijing. Outside work, I play badminton, read widely, watch films,
+                and try to understand subjects beyond my own field.
+              </p>
+            )}
+          </div>
+        </section>
 
-      <section className="content-section" aria-labelledby="interests-title">
-        <h2 id="interests-title">Interests</h2>
-        <ul className="link-list">
-          {interests.map(([title, category]) => (
-            <li key={title}>
-              <span>{title}</span>
-              <span className="meta">{category}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section className="section" aria-labelledby="notes-title">
+          <h1 id="notes-title">Notes</h1>
+          <ul className="note-grid">
+            {notes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+        </section>
 
-      <section className="content-section" aria-labelledby="now-title">
-        <h2 id="now-title">Now</h2>
-        <p className="now-copy">
-          Exploring how computation and AI can make scientific work more useful,
-          explainable, and enjoyable.
-        </p>
-      </section>
+        <section className="section" aria-labelledby="now-title">
+          <h1 id="now-title">Now</h1>
+          <ul className="row-list">
+            {now.map(([title, meta]) => (
+              <li key={title}>
+                <span>{title}</span>
+                <span>{meta}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section className="content-section" aria-labelledby="elsewhere-title">
-        <h2 id="elsewhere-title">Elsewhere</h2>
-        <ul className="link-list external-list">
-          <li>
-            <a href="https://github.com/XiaMinqi" target="_blank" rel="noreferrer">
-              <span>GitHub</span>
-              <span className="meta">Code and projects ↗</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+        <section className="section" id="background" aria-labelledby="background-title">
+          <h1 id="background-title">Background</h1>
+          <ul className="row-list">
+            {background.map(([title, meta]) => (
+              <li key={title}>
+                <span>{title}</span>
+                <span>{meta}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <footer>
-        <span>© {new Date().getFullYear()} Minqi Xia</span>
-        <span>Beijing, China</span>
-      </footer>
+        <footer>
+          <a href="https://github.com/XiaMinqi" target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+          <span>© {new Date().getFullYear()} Minqi Xia</span>
+        </footer>
+      </div>
+
+      <aside className="portrait-column" aria-label="Personal journey illustration">
+        <img
+          src="/journey.webp"
+          alt="A painted landscape tracing a journey from Jiangnan through Nanjing to Beijing, with subtle references to science, books, film, and badminton."
+        />
+      </aside>
     </main>
   );
 }
