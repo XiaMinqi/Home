@@ -52,130 +52,92 @@ export default function Home() {
             </div>
           </div>
 
-          {!longBio ? (
-            <div className="bio-copy">
-              <p>
-                I’m a data scientist at P&G, working at the intersection of
-                physical science, computation, and AI. I build models and tools
-                that help people understand complex systems and make better
-                scientific decisions.
-              </p>
-              <p>
-                My background is in computational chemistry. Over time, my
-                interests have expanded from molecular systems to measurement,
-                scientific software, and the design of scientific workflows.
-              </p>
+          <div className="bio-panels">
+            <div className={`bio-panel bio-default ${!longBio ? "is-active" : ""}`} aria-hidden={longBio}>
+              <div className="bio-copy">
+                <p>
+                  I’m a data scientist at P&amp;G, working at the intersection of
+                  physical science, computation, and AI. I build models and tools
+                  that help people understand complex systems and make better
+                  scientific decisions.
+                </p>
+                <p>
+                  My background is in computational chemistry. Over time, my
+                  interests have expanded from molecular systems to measurement,
+                  scientific software, and the design of scientific workflows.
+                </p>
+              </div>
             </div>
-          ) : (
-            <div className="detail-copy">
-              <section aria-labelledby="wuxi-title">
-                <h2 id="wuxi-title">Wuxi</h2>
-                <p>I grew up in Wuxi, a city by Lake Taihu in southern Jiangsu.</p>
-                <p>
-                  I like quite a few things about the city, especially the food.
-                  Wuxi-style xiaolongbao, braised spare ribs, and yangchun noodles
-                  are still some of my favorites. The local food tends to be on
-                  the sweeter side, which is also very much to my taste.
-                </p>
-                <p>
-                  Wuxi is also known for Lake Taihu, and Yuantouzhu is probably
-                  one of my favorite places in the city. The cherry blossoms
-                  there are especially beautiful in spring, when a large part of
-                  the lakeside turns pink for a few weeks.
-                </p>
-                <p>
-                  I lived in Wuxi until I left for university, so most of my
-                  childhood memories are naturally tied to the city.
-                </p>
-              </section>
 
-              <section aria-labelledby="nanjing-title">
-                <h2 id="nanjing-title">Nanjing</h2>
-                <p>
-                  I moved to Nanjing for university and ended up spending both
-                  my undergraduate and graduate years there at Nanjing University.
-                </p>
-                <p>
-                  I studied chemistry, and during graduate school I joined Prof.
-                  Hu Zheng’s group. My research was mainly around electrocatalysis
-                  and battery-related systems, with a focus on computational
-                  chemistry and molecular dynamics simulations.
-                </p>
-                <p>
-                  A fairly large part of my university years also overlapped with
-                  the COVID pandemic. Classes, research and campus life were
-                  affected at different points, and there were periods when
-                  travelling between cities was much more complicated than usual.
-                  It was an unusual part of spending my early twenties at
-                  university.
-                </p>
-                <p>
-                  After several years there, Nanjing became another city I know
-                  quite well beyond the campus itself. I still like its combination
-                  of old neighborhoods, universities, mountains and lakes, and the
-                  fact that very different parts of the city can feel quite
-                  different from one another.
-                </p>
-              </section>
+            <div className={`bio-panel bio-detail ${longBio ? "is-active" : ""}`} aria-hidden={!longBio}>
+              <div className="detail-copy">
+                <section aria-labelledby="wuxi-title">
+                  <h2 id="wuxi-title">Wuxi</h2>
+                  <p>I grew up in <strong>Wuxi</strong>, a city by Lake Taihu in southern Jiangsu.</p>
+                  <p>
+                    I like quite a few things about the city, especially the food. <strong>Wuxi-style xiaolongbao, braised spare ribs, and yangchun noodles</strong> are still some of my favorites. The local food tends to be on the sweeter side, which is also very much to my taste.
+                  </p>
+                  <p>
+                    Beyond the food, I also really like the <strong>cherry blossoms at Yuantouzhu</strong>, especially in spring when they bloom along the shore of Lake Taihu and turn much of the lakeside pink.
+                  </p>
+                  <p>
+                    I lived in Wuxi until I left for university, so most of my childhood memories are naturally tied to the city.
+                  </p>
+                </section>
 
-              <section aria-labelledby="beijing-title">
-                <h2 id="beijing-title">Beijing</h2>
-                <p>
-                  After graduation, I moved to Beijing and started working in
-                  industrial R&amp;D.
-                </p>
-                <p>
-                  Compared with graduate school, the scope of my work has
-                  gradually become much broader. I still work with molecular
-                  simulation, but now also spend a lot of time on measurement,
-                  data analysis, modelling, scientific software and AI.
-                </p>
-                <p>
-                  One change I particularly enjoy is that the problems are usually
-                  much closer to real products. A question may start from an
-                  unexpected product behavior, then require experiments, data
-                  analysis or simulation to understand it, and eventually turn
-                  into a model or a tool that other researchers can use.
-                </p>
-                <p>
-                  Over the past few years, I have also been doing more work around
-                  AI for science, scientific agents and laboratory automation. A
-                  lot of my current interest is in how computation, experimental
-                  data, scientific models and AI systems can work together in R&amp;D.
-                </p>
-                <p>
-                  Beijing is also quite different from both Wuxi and Nanjing. I am
-                  still gradually getting to know the city outside work.
-                </p>
-              </section>
+                <section aria-labelledby="nanjing-title">
+                  <h2 id="nanjing-title">Nanjing</h2>
+                  <p>
+                    I spent both my <strong>undergraduate and graduate years at Nanjing University</strong>, studying chemistry.
+                  </p>
+                  <p>
+                    During graduate school, I joined <strong>Prof. Hu Zheng’s group</strong>. My research was mainly around <strong>electrocatalysis and battery-related systems</strong>, with a focus on <strong>computational chemistry and molecular dynamics simulations</strong>.
+                  </p>
+                  <p>
+                    A fairly large part of my university years also overlapped with the <strong>COVID pandemic</strong>. Classes, research and campus life were affected at different points, and there were periods when travelling between cities was much more complicated than usual. It was an unusual part of spending my early twenties at university.
+                  </p>
+                  <p>
+                    After several years there, I also grew to like Nanjing itself — its old neighborhoods, universities, mountains and lakes.
+                  </p>
+                </section>
 
-              <section aria-labelledby="outside-work-title">
-                <h2 id="outside-work-title">Outside work</h2>
-                <p>
-                  I like staying active and spend quite a bit of my free time
-                  outdoors. Badminton is the sport I play most regularly, and I
-                  also enjoy skiing, cycling and going to the gym.
-                </p>
-                <p>
-                  I am also interested in things like Chinese chess and Rubik’s
-                  cubes. I am not particularly serious about either of them, but
-                  I enjoy activities where there is something to figure out,
-                  practice, or gradually get better at.
-                </p>
-                <p>
-                  When I want something quieter, I like reading. I also enjoy
-                  going out — walking around a city, visiting somewhere new, or
-                  taking a trip when I have the chance.
-                </p>
-                <p>
-                  And despite already spending plenty of time with computers at
-                  work, I still genuinely enjoy coding. Sometimes I code because
-                  I need a tool; sometimes it is simply satisfying to build
-                  something and see it work.
-                </p>
-              </section>
+                <section aria-labelledby="beijing-title">
+                  <h2 id="beijing-title">Beijing</h2>
+                  <p>
+                    After graduation, I moved to <strong>Beijing</strong> and started working in industrial R&amp;D.
+                  </p>
+                  <p>
+                    Compared with graduate school, the scope of my work has gradually become much broader. I still work with <strong>molecular simulation</strong>, but now also spend a lot of time on <strong>measurement, data analysis, modelling, scientific software and AI</strong>.
+                  </p>
+                  <p>
+                    One change I particularly enjoy is that the problems are usually much closer to real products. A question may start from an unexpected product behavior, then require experiments, data analysis or simulation to understand it, and eventually turn into a model or a tool that other researchers can use.
+                  </p>
+                  <p>
+                    Over the past few years, I have also been doing more work around <strong>AI for science, scientific agents and laboratory automation</strong>. A lot of my current interest is in how computation, experimental data, scientific models and AI systems can work together in R&amp;D.
+                  </p>
+                  <p>
+                    Beijing is also quite different from both Wuxi and Nanjing. I am still gradually getting to know the city outside work.
+                  </p>
+                </section>
+
+                <section aria-labelledby="outside-work-title">
+                  <h2 id="outside-work-title">Outside work</h2>
+                  <p>
+                    I like staying active and spend quite a bit of my free time outdoors. <strong>Badminton</strong> is the sport I play most regularly, and I also enjoy <strong>skiing, cycling and going to the gym</strong>.
+                  </p>
+                  <p>
+                    I am also interested in things like <strong>Chinese chess and Rubik’s cubes</strong>. I am not particularly serious about either of them, but I enjoy activities where there is something to figure out, practice, or gradually get better at.
+                  </p>
+                  <p>
+                    When I want something quieter, I like <strong>reading</strong>. I also enjoy going out — walking around a city, visiting somewhere new, or taking a trip when I have the chance.
+                  </p>
+                  <p>
+                    And despite already spending plenty of time with computers at work, I still genuinely enjoy <strong>coding</strong>. Sometimes I code because I need a tool; sometimes it is simply satisfying to build something and see it work.
+                  </p>
+                </section>
+              </div>
             </div>
-          )}
+          </div>
         </section>
 
         {!longBio && (
