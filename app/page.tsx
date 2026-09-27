@@ -75,43 +75,44 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" aria-labelledby="skillsets-title">
-          <h1 id="skillsets-title">Skillsets</h1>
-          <ul className="note-grid">
-            {skillsets.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        </section>
+        {!longBio && (
+          <>
+            <section className="section" aria-labelledby="skillsets-title">
+              <h1 id="skillsets-title">Skillsets</h1>
+              <ul className="note-grid">
+                {skillsets.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </section>
 
-        <section className="section" id="background" aria-labelledby="background-title">
-          <h1 id="background-title">Background</h1>
-          <ul className="row-list">
-            {background.map(([title, meta]) => (
-              <li key={title}>
-                <span>{title}</span>
-                <span>{meta}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+            <section className="section" id="background" aria-labelledby="background-title">
+              <h1 id="background-title">Background</h1>
+              <ul className="row-list">
+                {background.map(([title, meta]) => (
+                  <li key={title}>
+                    <span>{title}</span>
+                    <span>{meta}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-        <section className="section contact-section" id="contact" aria-labelledby="contact-title">
-          <h1 id="contact-title">Contact</h1>
-          <p className="contact-copy">
-            I’m always happy to connect with people working across science,
-            computation, and AI. If you’d like to exchange ideas or discuss a
-            possible collaboration, you can find me on GitHub.
-          </p>
-          <a className="contact-link" href="https://github.com/Xia-Minqi" target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
-        </section>
+            <section className="section contact-section" id="contact" aria-labelledby="contact-title">
+              <h1 id="contact-title">Contact</h1>
+              <div className="contact-links">
+                <a href="mailto:xiaminqi@foxmail.com" aria-label="Email Minqi Xia">
+                  xiaminqi@foxmail.com
+                </a>
+                <a href="https://github.com/Xia-Minqi" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+              </div>
+            </section>
+          </>
+        )}
 
         <footer>
-          <a href="https://github.com/Xia-Minqi" target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
           <span>© {new Date().getFullYear()} Minqi Xia</span>
         </footer>
       </div>
