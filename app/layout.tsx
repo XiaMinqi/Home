@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Minqi Xia",
   description:
-    "Minqi Xia is a scientist and builder working across physical science, computation, and AI.",
+    "Minqi Xia is a data scientist at P&G working across physical science, computational chemistry, scientific software, and AI.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

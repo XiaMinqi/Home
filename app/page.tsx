@@ -2,22 +2,13 @@
 
 import { useState } from "react";
 
-const notes = [
-  "AI for science",
-  "Scientific software",
-  "Measurement",
-  "Molecular modelling",
-  "Autonomous experimentation",
-  "Learning across fields",
-  "Books and ideas",
-  "Film and ways of seeing",
-];
-
-const now = [
-  ["Connecting experiments, models, and decisions", "Scientific work"],
-  ["Learning more about statistics, biology, and automation", "Current study"],
-  ["Reading across technology, business, history, and culture", "Ongoing"],
-  ["Playing badminton and learning to watch films more carefully", "Outside work"],
+const skillsets = [
+  "AI for Science",
+  "Formulation Science",
+  "Quantum Chemistry",
+  "Molecular Dynamics",
+  "Laboratory Automation",
+  "Image Analysis",
 ];
 
 const background = [
@@ -63,42 +54,32 @@ export default function Home() {
 
           <div className="bio-copy">
             <p>
-              I’m a scientist and builder working where physical science,
-              computation, and AI meet. I build models and tools that help people
-              understand complex systems and make better scientific decisions.
+              I’m a data scientist at P&G, working at the intersection of
+              physical science, computation, and AI. I build models and tools
+              that help people understand complex systems and make better
+              scientific decisions.
             </p>
             <p>
-              My background is in chemistry and computational modelling. Over
-              time, my interests have expanded from molecules to measurement,
-              software, and the design of scientific workflows.
+              My background is in computational chemistry. Over time, my
+              interests have expanded from molecular systems to measurement,
+              scientific software, and the design of scientific workflows.
             </p>
             {longBio && (
               <p>
                 I grew up in Wuxi, studied at Nanjing University, and now live in
-                Beijing. Outside work, I play badminton, read widely, watch films,
-                and try to understand subjects beyond my own field.
+                Beijing. Outside work, I stay active through badminton, skiing,
+                cycling, and strength training. I also read widely, watch films,
+                and enjoy exploring subjects beyond my own field.
               </p>
             )}
           </div>
         </section>
 
-        <section className="section" aria-labelledby="notes-title">
-          <h1 id="notes-title">Notes</h1>
+        <section className="section" aria-labelledby="skillsets-title">
+          <h1 id="skillsets-title">Skillsets</h1>
           <ul className="note-grid">
-            {notes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="section" aria-labelledby="now-title">
-          <h1 id="now-title">Now</h1>
-          <ul className="row-list">
-            {now.map(([title, meta]) => (
-              <li key={title}>
-                <span>{title}</span>
-                <span>{meta}</span>
-              </li>
+            {skillsets.map((skill) => (
+              <li key={skill}>{skill}</li>
             ))}
           </ul>
         </section>
@@ -115,8 +96,20 @@ export default function Home() {
           </ul>
         </section>
 
+        <section className="section contact-section" id="contact" aria-labelledby="contact-title">
+          <h1 id="contact-title">Contact</h1>
+          <p className="contact-copy">
+            I’m always happy to connect with people working across science,
+            computation, and AI. If you’d like to exchange ideas or discuss a
+            possible collaboration, you can find me on GitHub.
+          </p>
+          <a className="contact-link" href="https://github.com/Xia-Minqi" target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+        </section>
+
         <footer>
-          <a href="https://github.com/XiaMinqi" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Xia-Minqi" target="_blank" rel="noreferrer">
             GitHub ↗
           </a>
           <span>© {new Date().getFullYear()} Minqi Xia</span>
@@ -135,7 +128,7 @@ export default function Home() {
           <img
             className="portrait-still"
             src="/journey-v2.webp"
-            alt="A bright painted landscape flowing from a Jiangnan canal through Nanjing's green city wall toward an open Beijing skyline."
+            alt="A bright painted landscape flowing from a Jiangnan canal through Nanjing’s green city wall toward an open Beijing skyline."
             draggable="false"
           />
         </div>
