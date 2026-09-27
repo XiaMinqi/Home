@@ -90,6 +90,17 @@ header { margin-bottom: 34px; }
 .bio-copy { padding-top: 20px; }
 .bio-copy p { margin: 0 0 23px; }
 .bio-copy p:last-child { margin-bottom: 0; }
+.detail-copy { padding-top: 22px; }
+.detail-copy section + section { margin-top: 46px; }
+.detail-copy h2 {
+  margin: 0 0 20px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.detail-copy p { margin: 0 0 22px; }
+.detail-copy p:last-child { margin-bottom: 0; }
 
 .section { margin-bottom: 53px; }
 .section h1 {
