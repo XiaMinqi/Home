@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const assetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const skillsets = [
   "AI for Science",
   "Formulation Science",
@@ -186,14 +188,14 @@ export default function Home() {
         <div className="portrait-canvas">
           <img
             className="portrait-motion"
-            src="/journey-v2.webp"
+            src={`${assetPath}/journey-v2.webp`}
             alt=""
             aria-hidden="true"
             draggable="false"
           />
           <img
             className="portrait-still"
-            src="/journey-v2.webp"
+            src={`${assetPath}/journey-v2.webp`}
             alt="A bright painted landscape flowing from a Jiangnan canal through Nanjing’s green city wall toward an open Beijing skyline."
             draggable="false"
           />
