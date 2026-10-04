@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const assetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -67,6 +68,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="77db9284-5d5c-42b3-9315-e7fe70032eda"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
